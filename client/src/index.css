@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#f8fafc] text-slate-900 antialiased font-sans;
+  }
+}
+
+html.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+html.dark header,
+html.dark footer,
+html.dark .bg-white,
+html.dark .bg-slate-50 { background-color: #1e293b; border-color: #334155; }
+
+html.dark .bg-slate-100 { background-color: #334155; }
+html.dark .bg-slate-900 { background-color: #020617; }
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700 { color: #f1f5f9; }
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-slate-400 { color: #94a3b8; }
+html.dark input,
+html.dark textarea,
+html.dark select { background-color: #0f172a; color: #f1f5f9; border-color: #475569; }
+html.dark .border-slate-200,
+html.dark .border-slate-100,
+html.dark .border-slate-800 { border-color: #334155; }
+html.dark .bg-teal-50 { background-color: #134e4a; }
+html.dark .text-teal-700,
+html.dark .text-teal-800 { color: #5eead4; }
+
+/* Custom subtle animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(20, 184, 166, 0);
+  }
+}
+
+@keyframes urgentPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.animate-urgent-glow {
+  animation: urgentPulse 1.8s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
