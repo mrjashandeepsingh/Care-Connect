@@ -9,6 +9,9 @@ from fastapi.responses import HTMLResponse
 from backend.app.config import settings
 from backend.app.database import ensure_database_schema
 
+from fastapi import FastAPI
+
+app = FastAPI()
 # Routers
 from backend.app.routers import auth, doctors, queue, ai, reviews, patients
 
@@ -125,3 +128,4 @@ def health():
         "status": "ok",
         "message": "Care Connect backend is running"
     }
+
