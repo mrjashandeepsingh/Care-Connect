@@ -119,3 +119,9 @@ def page_doctor_login(request: Request):
 def legacy_doctor_register(request: Request):
     return templates.TemplateResponse("doctor_register.html", {"request": request, "page_title": "Doctor Registration — Care Connect"})
 
+@app.get("/api/health")
+def health():
+    return {
+        "status": "ok",
+        "message": "Care Connect backend is running"
+    }
